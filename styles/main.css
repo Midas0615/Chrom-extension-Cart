@@ -1,3 +1,7 @@
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -301,4 +305,15 @@ body.blackcart-login {
 }
 .brands-wrapper div.column img {
   height: 80px;
+}
+.glyphicon-refresh-animate {
+  animation: spin 1.5s infinite linear;
+}
+
+.login-process {
+  width: 20px;
+  height: 20px;
+  line-height: 21px;
+  position: relative;
+  top: 2px;
 }
