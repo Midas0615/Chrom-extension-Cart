@@ -77,6 +77,8 @@ $(function() {
       // $dfd.reject(err);
       if (err.status === 403) {
         $errEl.text('Please check your email/password.').removeClass('hidden');
+      } else {
+        $errEl.text('Error connecting to the server.').removeClass('hidden');
       }
       console.log(err);
     });
