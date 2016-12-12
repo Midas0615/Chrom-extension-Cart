@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="styles/vendor/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/vendor/font-awesome-animation.min.css">
     <!-- bower:css -->
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
@@ -27,7 +28,9 @@
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div> -->
-        <button class="btn btn-lg btn-primary btn-block btn-cmlogin" type="submit">LOGIN</button>
+        <button class="btn btn-lg btn-primary btn-block btn-cmlogin" type="submit">
+          LOGIN
+        </button>
       </form>
 
       <div class="logged-in-user hidden" style="padding-top:10px;">
@@ -42,7 +45,20 @@
         </div>
       </div>
     </div>
-    <script src="scripts/vendor.js"></script>
+    <!-- build:js scripts/vendor.js -->
+    <script src="scripts/vendor/underscore-min.js"></script>
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <script src="scripts/vendor/backbone-min.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/popup.js -->
+    <script src="scripts/config.js"></script>
+    <script src="scripts/blackcart.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/views/brands.popup.js"></script>
     <script src="scripts/popup.js"></script>
+    <!-- endbuild -->
   </body>
 </html>

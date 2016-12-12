@@ -1,6 +1,6 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.1.4",
+  "version": "0.1",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
@@ -10,6 +10,12 @@
   "default_locale": "en",
   "background": {
     "scripts": [
+      "scripts/chromereload.js",
+      "bower_components/jquery/dist/jquery.min.js",
+      "scripts/vendor/underscore-min.js",
+      "scripts/config.js",
+      "scripts/blackcart.js",
+      "scripts/utils.js",
       "scripts/background.js"
     ]
   },
@@ -27,10 +33,29 @@
         "https://*/*"
       ],
       "js": [
-        "scripts/vendor.js",
-        "scripts/blackcart.app.js"
+        "bower_components/jquery/dist/jquery.min.js",
+        "scripts/vendor/underscore-min.js",
+        "scripts/vendor/backbone-min.js",
+        "scripts/vendor/jquery.form-validator.min.js",
+        "scripts/vendor/jquery.payment.min.js",
+        "scripts/config.js",
+        "scripts/blackcart.js",
+        "scripts/utils.js",
+        "scripts/customhandlers.js",
+        "scripts/collections/order.js",
+        "scripts/views/loading.js",
+        "scripts/views/retailers.js",
+        "scripts/views/blackcarticon.js",
+        "scripts/views/cart.js",
+        "scripts/views/confirm.js",
+        "scripts/views/success.js",
+        "scripts/views/button.js",
+        "scripts/views/walkthrough1.js",
+        "scripts/views/walkthrough2.js",
+        "scripts/views/walkthrough3.js",
+        "scripts/contentscript.js"
       ],
-      "css": [
+      "css":[
         "styles/vendor/font-awesome.min.css",
         "styles/main.css"
       ],
@@ -49,12 +74,10 @@
     "styles/main.css",
     "styles/modal.css",
     "fonts/*",
-    "http://fonts.gstatic.com/*"
+    "gfonts/*"
   ],
   "externally_connectable": {
-    "matches": [
-      "*://blackcart.co/*"
-    ]
+    "matches": ["*://blackcart.co/*"]
   },
   "permissions": [
     "tabs",

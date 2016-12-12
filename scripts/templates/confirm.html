@@ -49,28 +49,24 @@
             </div>
           </div>
           <div class="block clearfix">
-            <% if(!userInfo.CustCD ) { %>
-              <div class="cont_tlo_body_page_adress_hed payment-info-container">
+            <div class="cont_tlo_body_page_adress_hed payment-info-container">
+              <% if(!userInfo.CustCD ) { %>
               	<h3 style="color:#6D0001">
                 	Payment Method
                 	<i class="fa fa-times-circle fa-1x" style="color:#6D0001"></i>
               	</h3>
               	<span class="span payment-info-wrapper" style="color:#6D0001">
                   No payment method. <a href="#" target="_blank" id="add-payment-information">Please add one</a>.
-                  <br/>
-                  <br/>
-                  <em style="color:#555;">Your credit card is never charged until you've decided to keep any of your picks.</em>
                 </span> 
-              </div>
-            <% } %>
-            <% if(userInfo.CustCD ) { %>
-              <div class="cont_tlo_body_page_adress_hed payment-info-container">
+              <% } else {%>
                 <h3>
                   Payment Method
                   <i class="fa fa-check-circle fa-1x"></i>
                 </h3>
                 <a href="#" target="_blank" id="edit-payment-information">edit</a>
-              </div>
+              <% } %>
+            </div>
+            <% if(userInfo.CustCD ) { %>
               <span class="span payment-custcd">Credit Card: xxxx xxxx xxxx <%- userInfo.CustCD %></span>
             <% } %>
             <div class="user-payment-info-edit hidden">
@@ -92,7 +88,7 @@
         <div class="block notice">
           <img src="<%- chromeURL('images/sub/rizne.png') %>">
           <span class="span2">
-            <strong>You will not be charged.</strong> We will deliver <strong>3 product(s)</strong> to you within 7-10 business days.
+            You will be charged <b>$10.00 CAD.</b> We'll deliver <b><%- order.models.length %> product(s)</b> to you in 7-10 business days.
           </span> 
         </div>
       </div>
