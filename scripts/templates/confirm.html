@@ -88,7 +88,13 @@
         <div class="block notice">
           <img src="<%- chromeURL('images/sub/rizne.png') %>">
           <span class="span2">
-            You will be charged <b>$10.00 CAD.</b> We'll deliver <b><%- order.models.length %> product(s)</b> to you in 7-10 business days.
+            You will be charged <b>$10.00 CAD.</b> We'll deliver <b><%- order.models.length %> 
+            <% if(order.models.length == 1) { %>
+              product
+            <% } else { %>
+              products
+            <% } %>
+            </b> to you in 7-10 business days.
           </span> 
         </div>
       </div>
