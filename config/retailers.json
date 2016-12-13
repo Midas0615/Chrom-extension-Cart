@@ -72,19 +72,6 @@
             }
         },
         {
-            "PSource":"American Apparel",
-            "url":"http://store.americanapparel.ca",
-            "button":{
-                "selector":"#addProductBtn",
-                "insertionNode":".addProduct"
-            },
-            "content":{
-                "PThumbnail":"#product-image #product_img",
-                "PName":".product-name",
-                "Price":"#skuPriceId .salePrice || #skuPriceId .price || #skuPriceId span"
-            }
-        },
-        {
             "PSource":"Garage",
             "url":"http://www.garageclothing.com/ca",
             "customHandler":"garageCustomHandler",
