@@ -72,20 +72,6 @@
   }
 
   function _mergeRetailers(local, remote) {
-    // test data
-    /*var finalRetailers = [{
-      "PSource": "Apache",
-      "url": "http://userver",
-      "button": {
-        "selector": ".validator p a",
-        "insertionNode": ".validator"
-      },
-      "content": {
-        "PThumbnail": ".page_header.floating_element img",
-        "PName": ".page_header > span.floating_element",
-        "Price": "#cost"
-      }
-    }];*/
     var finalRetailers = [];
     $.each(remote, function() {
       var remoteRetailer;

@@ -36,7 +36,7 @@
                     },
                     "content":{
                         "PThumbnail":"#quickview-carousel-inner .item.active > img",
-                        "PName":".quickview-product-name span",
+                        "PName":".quickview-product-name h3",
                         "Price":"#quickview-sale-price || #quickview-regular-price || .quickview-regular-price"
                     }
                 }
@@ -1196,6 +1196,35 @@
             "url": "https://www.eastdane.com",
             "prependToBody":true,
             "customHandler":"shopBopCustomHandler",
+            "retryInterval":1500,
+            "maxRetryAttempts":3,
+            "button":{
+                "selector":"#buyButton",
+                "insertionNode":".add-to-cart-container"
+            },
+            "content":{
+                "PThumbnail":"img#productImage || #thumbnailList li img.thumbImages.thumbSelected",
+                "PName":"#product-information > h1.brand-heading span.product-title",
+                "Price":"#productPrices .priceBlock .salePrice || #productPrices .priceBlock"
+            },
+            "alternates":{
+                "popup":{
+                    "button":{
+                        "selector":".modal-body #qsBuyButton",
+                        "insertionNode":".modal-body #buttonDiv:insertafter"
+                    },
+                    "content":{
+                        "PThumbnail":".modal-body #productDetailMainImage > img",
+                        "PName":".modal-body #productTitle",
+                        "Price":".modal-body #productPrices .priceBlock .salePrice || .modal-body #productPrices .priceBlock"
+                    }
+                }
+            }
+        },
+        {
+            "PSource": "H&M",
+            "url": "http://www2.hm.com/en_cas",
+            "prependToBody":true,
             "retryInterval":1500,
             "maxRetryAttempts":3,
             "button":{
