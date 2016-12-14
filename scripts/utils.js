@@ -302,27 +302,43 @@
                 }
             } else {
                 $uploadDataURLPromise = $.Deferred();
-                // strip URL of query params
-                strippedImg = this.fixThumbnailURL(img);
-                // check if new URL works
-                this.checkImageLoad(strippedImg, function(imageLoadSuccess) {
-                    if (imageLoadSuccess) {
-                        // if yes, upload as is
-                        $uploadDataURLPromise.resolve(strippedImg);
-                    } else {
-                        // if no, upload to imgur and return URL
-                        self.getDataURI(img, function(imgDataURI) {
-                            self
-                                .uploadImage(imgDataURI)
-                                .done(function(result) {
-                                    $uploadDataURLPromise.resolve(result);
-                                })
-                                .fail(function(err) {
-                                    $uploadDataURLPromise.reject(err);
-                                });
+                /************************Prev Version Start ****************************/
+                // // strip URL of query params
+                // strippedImg = this.fixThumbnailURL(img);
+                // // check if new URL works
+                // this.checkImageLoad(strippedImg, function(imageLoadSuccess) {
+                //     if (imageLoadSuccess) {
+                //         // if yes, upload as is
+                //         $uploadDataURLPromise.resolve(strippedImg);
+                //     } else {
+                //         // if no, upload to imgur and return URL
+                //         self.getDataURI(img, function(imgDataURI) {
+                //             self
+                //                 .uploadImage(imgDataURI)
+                //                 .done(function(result) {
+                //                     $uploadDataURLPromise.resolve(result);
+                //                 })
+                //                 .fail(function(err) {
+                //                     $uploadDataURLPromise.reject(err);
+                //                 });
+                //         });
+                //     }
+                // });
+                /************************Prev Version End ****************************/
+
+                /************************New Version Start ****************************/
+                self.getDataURI(img, function(imgDataURI) {
+                    self
+                        .uploadImage(imgDataURI)
+                        .done(function(result) {
+                            $uploadDataURLPromise.resolve(result);
+                        })
+                        .fail(function(err) {
+                            $uploadDataURLPromise.reject(err);
                         });
-                    }
                 });
+                /************************New Version End ****************************/
+                
                 return $uploadDataURLPromise.promise();
             }
 

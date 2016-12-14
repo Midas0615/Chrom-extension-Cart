@@ -102,7 +102,7 @@
     this.$config = this.getConfig();
     this.config = null;
     this.configError = null;
-    this.$config.done(function() {
+    this.$config.done(function(response) {
       getActiveTabStatus(function(err, status, activeTabID) {
         if (err) {
           return true;

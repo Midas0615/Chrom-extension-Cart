@@ -293,7 +293,6 @@
                     if (!r.data.link) {
                         self.log('error', 'Could not retrieve URL from Imgur');
                     }
-
                     self.order
                         .addProduct(self.extractContentsFromPage(r.data.link || ''))
                         .fail(function() {

@@ -121,6 +121,10 @@
     background:#333;
   } */
 }
+.blackcart-icon-wrapper.blackcart-retailer-hm {
+  z-index: 9999;
+}
+
 .blackcart-icon-wrapper.blackcart-retailer-east-dane {
   z-index: 9999;
 }

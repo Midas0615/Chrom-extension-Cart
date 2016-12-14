@@ -506,6 +506,7 @@
         _lookupRetailerWithURL: function() {
             var url = window.location.href.replace(URLRegex, '');
             var retailersList = this.get('retailers');
+            
             var retailer;
 
             _.every(retailersList, function(retailerObj) {
