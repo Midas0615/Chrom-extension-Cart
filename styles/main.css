@@ -45,6 +45,9 @@
 .blackcart-loading-view.blackcart-retailer-shopbop {
   z-index: 2000;
 }
+.blackcart-loading-view.blackcart-retailer-club-monaco{
+  z-index: 1500;
+}
 .blackcart-loading-view.blackcart-retailer-hollister {
   z-index: 10000;
 }

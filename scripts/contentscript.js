@@ -307,11 +307,9 @@
       if (!retailer.button && !retailer.polymorphicOn) {
         return this.log('Button does not exist on this page');
       }
-
       if (opts.stopPolling && this.injectTimeoutID) {
         clearTimeout(this.injectTimeoutID);
       }
-
       if (isIframe) {
         $iframeSelector = $(retailer.alternates.popup.iframeSelector);
       }

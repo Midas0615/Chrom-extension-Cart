@@ -373,6 +373,20 @@
                     });
                 }, timeout);
             });
+        },
+
+        clubMonacoCustomHandler: function(retailer) {
+            var self = this;
+            var timeout = 5000;
+            $('body').on('click', '.quickshop-link-magnify', function() {
+                setTimeout(function() {
+                    self.removeButtons('popup').injectButton(retailer, {
+                        injectType: 'popup',
+                        stopPolling: true,
+                        isIframe: true
+                    });
+                }, timeout);
+            });
         }
     };
     window.Blackcart.CustomHandlers = CustomHandlers;

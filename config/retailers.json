@@ -984,6 +984,9 @@
     {
       "PSource": "Club Monaco",
       "url": "http://www.clubmonaco.ca/",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "customHandler":"clubMonacoCustomHandler",
       "button":{
         "selector":"#add-to-cart",
         "insertionNode":"#add-to-cart-container"
@@ -992,11 +995,28 @@
         "PThumbnail":"#alternate-images li.active > a > img || #alternate-images > li > a > img || #mainProductImage",
         "PName":"#product-information .product-title",
         "Price":"#product-information .money .sale-price || #product-information .money span"
+      },
+      "alternates":{
+        "popup":{
+          "iframeSelector":"#fancybox-frame",
+          "button":{
+            "selector":"#product #add-to-cart",
+            "insertionNode":"#product #add-to-cart-container"
+          },
+          "content":{
+            "PThumbnail":"#alternate-images li.active > a > img || #alternate-images > li > a > img || #mainProductImage",
+            "PName":"#product-information .product-title a",
+            "Price":"#product-information .money .sale-price || #product-information .money span"
+          }
+        }
       }
     },
     {
       "PSource": "Club Monaco",
       "url": "http://clubmonaco.borderfree.com/",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
+      "customHandler":"clubMonacoCustomHandler",
       "button":{
         "selector":"#add-to-cart",
         "insertionNode":"#add-to-cart-container"
@@ -1005,6 +1025,20 @@
         "PThumbnail":"#alternate-images li.active > a > img || #alternate-images > li > a > img || #mainProductImage",
         "PName":"#product-information .product-title",
         "Price":"#product-information .money .sale-price || #product-information .money span"
+      },
+      "alternates":{
+        "popup":{
+          "iframeSelector":"#fancybox-frame",
+          "button":{
+            "selector":"#product #add-to-cart",
+            "insertionNode":"#product #add-to-cart-container"
+          },
+          "content":{
+            "PThumbnail":"#alternate-images li.active > a > img || #alternate-images > li > a > img || #mainProductImage",
+            "PName":"#product-information .product-title a",
+            "Price":"#product-information .money .sale-price || #product-information .money span"
+          }
+        }
       }
     },
     {
@@ -1026,7 +1060,7 @@
         "popup":{
           "button":{
             "selector":".jconfirm-box .content #addtobag",
-            "insertionNode":".jconfirm-box .content .btn_addtobag:insertafter"
+            "insertionNode":".jconfirm-box .content .btn_addtobag:insertAfter"
           },
           "content":{
             "PThumbnail":".jconfirm-box .content #pdp_thumbnail li:first-child > a > img",
