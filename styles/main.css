@@ -45,6 +45,9 @@
 .blackcart-loading-view.blackcart-retailer-shopbop {
   z-index: 2000;
 }
+.blackcart-loading-view.blackcart-retailer-hollister {
+  z-index: 10000;
+}
 .blackcart-loading-view.blackcart-retailer-the-shoe-company {
   z-index: 10000;
 }
@@ -320,4 +323,8 @@ body.blackcart-login {
   line-height: 21px;
   position: relative;
   top: 2px;
+}
+
+.product__actions--availability-wrapper .blackcart-btn-wrapper{
+  margin-left: 10px;
 }

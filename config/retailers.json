@@ -129,9 +129,11 @@
       "PSource":"Nike",
       "url":"http://store.nike.com",
       "customHandler":"nikeCustomHandler",
+      "retryInterval": 1000,
+      "maxRetryAttempts":3,
       "button":{
-        "selector":"#buyingtools-add-to-cart-button",
-        "insertionNode":"#exp-pdp-buying-tools-container"
+        "selector":".exp-pdp-promo-message",
+        "insertionNode":".exp-pdp-promo-wrapper"
       },
       "content":{
         "PThumbnail":".exp-pdp-alt-images-carousel li.exp-pdp-active > img",
@@ -173,24 +175,24 @@
       "retryInterval":1500,
       "maxRetryAttempts":3,
       "button":{
-        "selector":".product__actions--add-to-bag",
-        "insertionNode":".product__actions"
+        "selector":".product__actions--availability",
+        "insertionNode":".product__actions--availability-wrapper"
       },
       "content":{
-        "PThumbnail":".bx-wrapper .bx-pager-link.active > img",
-        "PName":".product__description .product__description--name",
+        "PThumbnail":".bx-wrapper .bx-pager-link.active > img || .product-thumbnails__wrapper ul li a.active > img",
+        "PName":".product__description .product__description--name || .product-page-info__title .product-page-title",
         "Price":".product-price-v2__price--offer || .product-price-v2__price--list"
       },
       "alternates":{
         "popup":{
           "button":{
-            "selector":".inline-quickview .product__actions--add-to-bag",
-            "insertionNode":".inline-quickview .product__actions"
+            "selector":"#simplemodal-container .product__actions--add-to-bag",
+            "insertionNode":"#simplemodal-container .product__actions"
           },
           "content":{
-            "PThumbnail":".inline-quickview .bx-wrapper .bx-pager-link.active > img",
-            "PName":".inline-quickview .product__description .product__description--name",
-            "Price":".inline-quickview .product-price-v2__price--offer || .inline-quickview .product-price-v2__price--list"
+            "PThumbnail":"#simplemodal-container .bx-wrapper .bx-pager-link.active > img",
+            "PName":"#simplemodal-container .product__description .product__description--name",
+            "Price":"#simplemodal-container .product-price-v2__price--offer || #simplemodal-container .product-price-v2__price--list"
           }
         }
       }

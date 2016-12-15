@@ -29,7 +29,7 @@
   var PageManager = utils.extendMany(Backbone.View, utils.UtilsClass).extend({
     retailersConfigURL: 'config/retailers.json',
     maxRetryAttempts: 15,
-    retryInterval: 5000,
+    retryInterval: 1500,
     retryAttempt: 0,
     activeTab: '',
     _options: {},
