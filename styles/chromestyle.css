@@ -438,7 +438,6 @@ font-family:sans-serif;
 }
 .notice {
 	border:none;
-	margin-top:10px;
 }
 .notice img {
 	width:100%;
@@ -598,7 +597,7 @@ box-shadow: inset 0px 2px 2px 0px rgba(0,0,0,0.07);
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	display: block;
 	font-size:12px !important;
-	margin-bottom:20px;
+	margin: 20px 0 10px !important;
 }
 .desc_tlo_pages_section {
 	width: 100%;
