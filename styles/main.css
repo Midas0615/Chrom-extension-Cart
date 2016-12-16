@@ -262,7 +262,7 @@ body.blackcart-login {
 }
 .btn-primary {
   padding: 12px 0;
-  background: #3DC650;
+  background: #2a6cba;
   color: #fff;
   border: 0;
   border-radius: 0;
@@ -272,10 +272,10 @@ body.blackcart-login {
 }
 .btn-primary:focus,
 .btn-primary:hover {
-  background: #4DDC61;
+  background: #215490;
 }
 .btn-cmlogin:active {
-  background: #36B047 !important;
+  background: #1e4e86 !important;
 }
 .blackcart-brands-link {
   cursor: pointer;
