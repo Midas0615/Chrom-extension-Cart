@@ -136,7 +136,7 @@
         clearLocal: function() {
             var uid = this.UID;
             var $dfd = $.Deferred();
-            chrome.storage.sync.get({
+            chrome.storage.local.get({
                 'blackcart_orders': false
             }, function(items) {
                 var blackcartOrders = items.blackcart_orders;
@@ -144,7 +144,7 @@
                     blackcartOrders[uid] = null;
                     delete blackcartOrders[uid];
                 }
-                chrome.storage.sync.set({
+                chrome.storage.local.set({
                     blackcart_orders: blackcartOrders
                 }, function() {
                     $dfd.resolve();
@@ -157,7 +157,7 @@
             var uid = this.UID;
             var self = this;
             var $dfd = $.Deferred();
-            chrome.storage.sync.get({
+            chrome.storage.local.get({
                 'blackcart_orders': false
             }, function(items) {
                 var blackcartOrders = items.blackcart_orders;
@@ -170,7 +170,7 @@
                     products: self.toJSON(),
                     orderNo: self.OrderNo
                 };
-                chrome.storage.sync.set({
+                chrome.storage.local.set({
                     blackcart_orders: blackcartOrders
                 }, function() {
                     $dfd.resolve();
@@ -185,7 +185,7 @@
             var self = this;
             var order;
             var $dfd = $.Deferred();
-            chrome.storage.sync.get({
+            chrome.storage.local.get({
                 'blackcart_orders': false
             }, function(items) {
                 var blackcartOrders = items.blackcart_orders;

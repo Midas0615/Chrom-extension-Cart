@@ -27,7 +27,7 @@ $(function() {
     el: $brandsContainer
   });
 
-  chrome.storage.sync.get({
+  chrome.storage.local.get({
     UID: '',
     UserName: '',
     UName: ''
@@ -59,7 +59,7 @@ $(function() {
     }).done(function(resp) {
       $loginButton.removeAttr('disabled');
       $loginProcess.addClass('hidden');
-      chrome.storage.sync.set({
+      chrome.storage.local.set({
         UID: resp.UID,
         UEmailID: resp.UEmailID,
         UName: resp.UName
