@@ -260,7 +260,7 @@
         }*/
 
         /*if (request.evt === 'blackcart-user-logged-in') {
-          chrome.storage.local.set({
+          chrome.storage.sync.set({
             UID: request.user.UID,
             UEmailID: request.user.UEmailID,
             UName: request.user.UName
@@ -302,13 +302,13 @@
             self
               ._getUserFromUID(request.uid)
               .done(function(resp) {
-                chrome.storage.local.get({
+                chrome.storage.sync.get({
                   UID: '',
                   UserName: '',
                   UName: ''
                 }, function(user) {
                   if (user.UID !== resp.UID) {
-                    chrome.storage.local.set({
+                    chrome.storage.sync.set({
                       UID: resp.UID,
                       UEmailID: resp.UEmailID,
                       UName: resp.UName
@@ -366,7 +366,7 @@
 
     _getUser: function() {
       var $dfd = $.Deferred();
-      chrome.storage.local.get({
+      chrome.storage.sync.get({
         UID: '',
         UserName: '',
         UName: ''
@@ -417,7 +417,7 @@
           evt: 'blackcart-redirect-page'
         }, function() {
           setTimeout(function() {
-            chrome.storage.local.set({
+            chrome.storage.sync.set({
               showSpinAnimation: true
             });
           }, 500);

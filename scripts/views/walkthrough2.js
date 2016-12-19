@@ -66,12 +66,12 @@
                 return;
             }
             this._waitForOtherModal = false;
-            chrome.storage.local.get({
+            chrome.storage.sync.get({
                 isWalkthrough_2Shown: false
             }, function(obj) {
                 if (obj && !obj.isWalkthrough_2Shown) {
                     self._show();
-                    chrome.storage.local.set({
+                    chrome.storage.sync.set({
                         isWalkthrough_2Shown: true
                     });
                 }

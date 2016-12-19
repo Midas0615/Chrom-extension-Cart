@@ -65,12 +65,12 @@
             var retailerName = this.retailer.PSource;
             var self = this;
             Blackcart.walkthrough_1Shown = true;
-            chrome.storage.local.get({
+            chrome.storage.sync.get({
                 isWalkthrough_1Shown: false
             }, function(obj) {
                 if (obj && !obj.isWalkthrough_1Shown) {
                     self._show();
-                    chrome.storage.local.set({
+                    chrome.storage.sync.set({
                         isWalkthrough_1Shown: true
                     });
                 }else{

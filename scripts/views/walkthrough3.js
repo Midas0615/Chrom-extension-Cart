@@ -69,12 +69,12 @@
 
         show: function() {
             var self = this;
-            chrome.storage.local.get({
+            chrome.storage.sync.get({
                 isWalkthrough_3Shown: false
             }, function(obj) {
                 if (obj && !obj.isWalkthrough_3Shown) {
                     self._show();
-                    chrome.storage.local.set({
+                    chrome.storage.sync.set({
                         isWalkthrough_3Shown: true
                     });
                 }

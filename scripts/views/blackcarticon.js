@@ -59,7 +59,7 @@
                 })).get(0));
             }
 
-            chrome.storage.local.get({
+            chrome.storage.sync.get({
                 lastAnimationTime: false
             }, function(data) {
                 var lastAnimationTime = data.lastAnimationTime;
@@ -67,7 +67,7 @@
                     (new Date().getTime() - lastAnimationTime >= animationInterval)) {
                     lastAnimationTime = new Date().getTime();
                     self.showSpinAnimation = true;
-                    chrome.storage.local.set({
+                    chrome.storage.sync.set({
                         lastAnimationTime: lastAnimationTime,
                         showSpinAnimation: true
                     });
@@ -78,7 +78,7 @@
             });
 
             if (_.isUndefined(this.showSpinAnimation)) {
-                chrome.storage.local.get({
+                chrome.storage.sync.get({
                     showSpinAnimation: false
                 }, function(data) {
                     self.showSpinAnimation = data.showSpinAnimation;
@@ -97,7 +97,7 @@
                     anchorEl.style.webkitAnimationPlayState = "running";
                 }
                 this.showSpinAnimation = false;
-                chrome.storage.local.set({
+                chrome.storage.sync.set({
                     showSpinAnimation: false
                 });
             }
@@ -135,7 +135,7 @@
                 el.style.webkitAnimationPlayState = "running";
             }
             this.showSpinAnimation = false;
-            chrome.storage.local.set({
+            chrome.storage.sync.set({
                 showSpinAnimation: false
             });
         }
