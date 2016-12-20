@@ -1060,7 +1060,7 @@
         "popup":{
           "button":{
             "selector":".jconfirm-box .content #addtobag",
-            "insertionNode":".jconfirm-box .content .btn_addtobag:insertAfter"
+            "insertionNode":".jconfirm-box .content .btn_addtobag:insertafter"
           },
           "content":{
             "PThumbnail":".jconfirm-box .content #pdp_thumbnail li:first-child > a > img",
