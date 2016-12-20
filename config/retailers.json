@@ -926,15 +926,31 @@
     },
     {
       "PSource": "Urban Outfitters",
+      "retryInterval":1500,
+      "maxRetryAttempts":5,
+      "customHandler":"urbanOutfittersCustomHandler",
       "url": "http://www.urbanoutfitters.com/ca/en",
       "button":{
-        "selector":".action-buttons button.bag-button",
-        "insertionNode":".action-buttons"
+        "selector":".product-details .action-buttons button.bag-button",
+        "insertionNode":".product-details .action-buttons"
       },
       "content":{
         "PThumbnail":".product-images > span:first-child > img",
         "PName":".pdp-desktop-titles h1",
         "Price":".mainPrice"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":".qv-holder.pdp-content .action-buttons button.bag-button",
+            "insertionNode":".qv-holder.pdp-content .action-buttons"
+          },
+          "content":{
+            "PThumbnail":".qv-holder.pdp-content span.expanded-image.top-image img",
+            "PName":".qv-holder.pdp-content .pd-inner h1 a",
+            "Price":".qv-holder.pdp-content .pd-inner .product-price span.mainPric"
+          }
+        }
       }
     },
     {

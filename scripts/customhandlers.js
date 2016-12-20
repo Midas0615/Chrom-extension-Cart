@@ -388,6 +388,21 @@
                 }, timeout);
             });
         }
+        
+        ,
+
+        urbanOutfittersCustomHandler: function(retailer) {
+            var self = this;
+            var timeout = 5000;
+            $('body').on('click', '.product-snapshot', function() {
+                setTimeout(function() {
+                    self.removeButtons('popup').injectButton(retailer, {
+                        injectType: 'popup',
+                        stopPolling: true
+                    });
+                }, timeout);
+            });
+        }
     };
     window.Blackcart.CustomHandlers = CustomHandlers;
 }());
