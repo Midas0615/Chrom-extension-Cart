@@ -503,6 +503,9 @@
 
     _lookupRetailerWithURL: function() {
       var url = window.location.href.replace(URLRegex, '');
+      if(url.indexOf('forever21.com/ca') > -1){
+          url = url.replace('forever21.com/ca', 'forever21.com/CA')
+      }
       var retailersList = this.get('retailers');
       var retailer;
 
