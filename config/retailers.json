@@ -943,12 +943,12 @@
         "popup":{
           "button":{
             "selector":".qv-holder.pdp-content .action-buttons button.bag-button",
-            "insertionNode":".qv-holder.pdp-content .action-buttons"
+            "insertionNode":".qv-holder.pdp-content .action-buttons:insertafter"
           },
           "content":{
             "PThumbnail":".qv-holder.pdp-content span.expanded-image.top-image img",
             "PName":".qv-holder.pdp-content .pd-inner h1 a",
-            "Price":".qv-holder.pdp-content .pd-inner .product-price span.mainPric"
+            "Price":".qv-holder.pdp-content .pd-inner .product-price span.mainPrice || .qv-holder.pdp-content .pd-inner .product-price span.salePrice"
           }
         }
       }
