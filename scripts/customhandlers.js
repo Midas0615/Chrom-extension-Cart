@@ -190,6 +190,15 @@
                     });
                 }, popupTimeout);
             });
+            
+            $('body').on('click', 'li.recommendation-product', function() {
+                setTimeout(function() {
+                    self.removeButtons('popup').injectButton(retailer, {
+                        injectType: 'popup',
+                        stopPolling: true
+                    });
+                }, popupTimeout);
+            });
         },
         jackjonesCustomHandler: function(retailer) {
             var self = this;

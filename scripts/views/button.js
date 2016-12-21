@@ -24,7 +24,11 @@
         if (rawPrice && rawPrice.indexOf('|') >= 0) {
             rawPrice = rawPrice.split('|')[0];
         }
-        return rawPrice.replace(/[A-Z\$\n\s\t\:]/ig, '');
+        var price = rawPrice.replace(/[A-Z\$\n\s\t\:]/ig, '');
+        if(price.indexOf("-") > -1){
+            price = price.split("-")[0];
+        }
+        return price;
     };
 
     var _attributeRE = /\:attr\([\w\-]+\)/g;
