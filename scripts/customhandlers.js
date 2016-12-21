@@ -157,8 +157,8 @@
         },
         garageCustomHandler: function(retailer) {
             var self = this;
-            var popupTimeout = 2000;
-            $('body').on('click', 'a.quickViewImg', function() {
+            var popupTimeout = 3000;
+            $('body').on('click', 'img.quickViewImg', function() {
                 setTimeout(function() {
                     self.removeButtons('popup').injectButton(retailer, {
                         injectType: 'popup',

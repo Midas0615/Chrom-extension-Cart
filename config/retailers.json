@@ -103,8 +103,8 @@
       "url":"http://www.dynamiteclothing.com/ca",
       "customHandler":"garageCustomHandler",
       "button":{
-        "selector":"#pdpAddToCartButton .btn_addtocart",
-        "insertionNode":"#pdpAddToCartButton:insertafter"
+        "selector":"#prodDetailsContainer #pdpAddToCartButton .btn_addtocart",
+        "insertionNode":"#prodDetailsContainer #pdpAddToCartButton:insertafter"
       },
       "content":{
         "PThumbnail":".addViews > li:first-child > a >img",
