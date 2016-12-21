@@ -294,7 +294,7 @@
         brownShoesHandler: function(retailer) {
             var self = this;
             var timeout = 1500;
-            var swatchSelectTimeout = 1800;
+            var swatchSelectTimeout = 3800;
             $('body').on('click', '#quickviewbutton', function() {
                 setTimeout(function() {
                     self.removeButtons().injectButton(retailer, {
@@ -302,9 +302,10 @@
                         stopPolling: true
                     });
                 }, timeout);
-            }).on('click', '.swatchanchor,.swatches.Color .selected,.swatches.size .selected', function() {
+            }).on('click', '.quickview .swatchanchor, .quickview .swatches.Color .selected, .quickview .swatches.size .selected', function() {
                 setTimeout(function() {
                     self.removeButtons().injectButton(retailer, {
+                        injectType: 'popup',
                         stopPolling: true
                     });
                 }, swatchSelectTimeout);
