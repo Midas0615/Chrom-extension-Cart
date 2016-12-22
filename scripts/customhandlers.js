@@ -413,6 +413,44 @@
                 }, timeout);
             });
         }
+        
+        ,
+
+        shopTiquesCustomHandler: function(retailer) {
+            var self = this;
+            var timeout = 1000;
+            
+            $('body').on('mouseleave', '.product.with-swatches.listproduct , .products-list__product.online', function(event){
+                event.stopPropagation();
+                $("#blackcart-add-to-cart-0").remove();
+            });
+            
+            $('body').on('mouseenter', '.product.with-swatches.listproduct , .products-list__product.online', function(event) {
+                event.stopPropagation();
+                var className = $(this).attr('class').replace(' ','.');
+                if(className.indexOf('products-list__product.online') > -1){
+                    // Products in main pages
+                    $('.products-list__product.online').removeClass('active_product');
+                    $('.products-list__product.online .products-list__product__form').removeClass('quick-buy selected focused');
+                    $('.products-list__product.online .products-list__product__form .button.pink').removeClass('quick-buy-add');
+                    $(this).addClass('active_product');
+                    $(this).find('.products-list__product__form').addClass('quick-buy selected focused');
+                    $(this).find('.products-list__product__form .button.pink').addClass('quick-buy-add');
+                    
+                } else {
+                    // Products in Trend Page
+                    $('.product.with-swatches.listproduct').removeClass('active_product');
+                    $(this).addClass('active_product');
+                }
+                setTimeout(function() {
+                    self.removeButtons('popup').injectButton(retailer, {
+                        injectType: 'popup',
+                        stopPolling: true
+                    });
+                    $(".quick-buy.selected.focused br").remove();
+                }, timeout);
+            });
+        }
     };
     window.Blackcart.CustomHandlers = CustomHandlers;
 }());

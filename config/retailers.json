@@ -913,6 +913,9 @@
     {
       "PSource": "Shoptiques",
       "url": "http://www.shoptiques.com",
+      "customHandler":"shopTiquesCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
       "prependToBody":true,
       "button":{
         "selector":"#add-to-cart",
@@ -922,6 +925,19 @@
         "PThumbnail":".controls.btn-group-color > a.active:attr(data-deferred-small) || .image-gallery ul#image-carousel li:first-child > a > span > img || .main-image > #wrap > a > img",
         "PName":"#product-detail .product-name > h1:nth(1)",
         "Price":"#product-price > span.display-price span.sale || #product-price span"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":".quick-buy.selected.focused .quick-buy-add",
+            "insertionNode":".quick-buy.selected.focused .quick-buy-add:insertafter"
+          },
+          "content":{
+            "PThumbnail":".product.with-swatches.listproduct.active_product .productImageHolder > a > img:nth(2) || .products-list__product.online.active_product a figure img:nth(1)",
+            "PName":".product.with-swatches.listproduct.active_product .name-price .name a || .products-list__product.online.active_product .products-list__product__description header a",
+            "Price":".product.with-swatches.listproduct.active_product .name-price .price span || .products-list__product.online.active_product .products-list__product__description div:nth(1)"
+          }
+        }
       }
     },
     {
