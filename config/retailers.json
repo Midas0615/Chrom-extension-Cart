@@ -931,8 +931,8 @@
       "customHandler":"urbanOutfittersCustomHandler",
       "url": "http://www.urbanoutfitters.com/ca/en",
       "button":{
-        "selector":".product-details .action-buttons button.bag-button",
-        "insertionNode":".product-details .action-buttons"
+        "selector":"#product-container .product-details .action-buttons button.bag-button",
+        "insertionNode":"#product-container .product-details .action-buttons"
       },
       "content":{
         "PThumbnail":".product-images > span:first-child > img",
@@ -942,8 +942,8 @@
       "alternates":{
         "popup":{
           "button":{
-            "selector":".qv-holder.pdp-content .action-buttons button.bag-button",
-            "insertionNode":".qv-holder.pdp-content .action-buttons:insertafter"
+            "selector":".qv-holder.pdp-content .product-details .action-buttons button.bag-button",
+            "insertionNode":".qv-holder.pdp-content .product-details .action-buttons:insertafter"
           },
           "content":{
             "PThumbnail":".qv-holder.pdp-content span.expanded-image.top-image img",
