@@ -1064,11 +1064,11 @@
       "retryInterval":1500,
       "maxRetryAttempts":3,
       "button":{
-        "selector":"#addtobag",
-        "insertionNode":".btn_addtobag:insertafter"
+        "selector":".pdp_wrapper #addtobag",
+        "insertionNode":".pdp_wrapper .btn_addtobag:insertafter"
       },
       "content":{
-        "PThumbnail":"#pdp_thumbnail li:first-child > a > img",
+        "PThumbnail":".column_wrapper .ItemImage.Main",
         "PName":".pdp_title .item_name_p",
         "Price":".pdp_title .price_p .price_c.sale || .pdp_title .price_p .price_c.original || .pdp_title .price_p .unitprice || .pdp_title .price_p > span > span"
       },
@@ -1079,7 +1079,7 @@
             "insertionNode":".jconfirm-box .content .btn_addtobag:insertafter"
           },
           "content":{
-            "PThumbnail":".jconfirm-box .content #pdp_thumbnail li:first-child > a > img",
+            "PThumbnail":".jconfirm-box .content #productImage",
             "PName":".jconfirm-box .content .pdp_title .item_name_p",
             "Price":".jconfirm-box .content .pdp_title .price_p .price_c.sale || .jconfirm-box .content .pdp_title .price_p .price_c.original || .jconfirm-box .content .pdp_title .price_p .unitprice || .jconfirm-box .content .pdp_title .price_p > span > span"
           }

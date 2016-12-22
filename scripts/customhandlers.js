@@ -145,7 +145,7 @@
         },
         nikeCustomHandler: function(retailer) {
             var self = this;
-            var timeout = 800;
+            var timeout = 2800;
             $('body').on('click', 'li', function() {
                 var $el = $(this);
                 if ($el.parents('.color-chips').length > 0) {
@@ -281,7 +281,7 @@
         forever21Handler: function(retailer) {
             var self = this;
             var timeout = 1500;
-            $('body').on('click', '.quick_view', function() {
+            $('body').on('click', '.quick_view, #carousel_newarrivals .item, #carousel_bestsellers .item', function() {
                 setTimeout(function() {
                     self.removeButtons('popup').injectButton(retailer, {
                         injectType: 'popup',
