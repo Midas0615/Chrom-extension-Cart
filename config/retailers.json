@@ -1173,7 +1173,7 @@
         "cls":"joe-fresh-btn"
       },
       "content":{
-        "PThumbnail":"#product-images-display > ul li.product-images-item:first-child > picture > img || img.image-show",
+        "PThumbnail":"#product-images-display > ul li.product-images-item:first-child > picture > img || img.image-show || img.product-image:nth(1)",
         "PName":".essential-info h1",
         "Price":"#product-info-content .product-price .price-group.-new > span || #product-info-content .product-price .price-group.-normal > span || .product-price .price-group.-new > span || .product-price .price-group.-normal > span"
       }
