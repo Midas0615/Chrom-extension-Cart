@@ -48,6 +48,9 @@
 .blackcart-loading-view.blackcart-retailer-urban-outfitters {
   z-index: 4000;
 }
+.blackcart-loading-view.blackcart-retailer-marciano {
+  z-index: 8000;
+}
 .blackcart-loading-view.blackcart-retailer-club-monaco{
   z-index: 1500;
 }

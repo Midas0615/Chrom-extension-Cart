@@ -248,9 +248,9 @@
             "insertionNode":"#quickViewBox .productInfo .buttons:insertafter"
           },
           "content":{
-            "PThumbnail":"#quickViewBox #thumbnailScroll .thumbs:first-child > img",
+            "PThumbnail":"#quickViewBox .productImages .swiper-slide-active img",
             "PName":"#quickViewBox .productDetails > h1",
-            "Price":"#quickViewBox .productDetails .price .offerSale .promo .priceVal || #quickViewBox .productDetails .price .offerSale .regular .priceVal || #quickViewBox  .productDetails .price .regPrice .original .priceVal"
+            "Price":"#quickViewBox .productDetails .price .offerSale .promo .priceVal || #quickViewBox .productDetails .price .offerSale .regular .priceVal || #quickViewBox  .productDetails .price .regPrice .original .priceVal || #quickViewBox .productDetails .price .promo .priceVal"
           }
         }
       }
