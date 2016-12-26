@@ -455,6 +455,29 @@
         
         ,
 
+        reitMansCustomHandler: function(retailer) {
+            var self = this;
+            var timeout = 2000;
+            $('body').on('click', 'a.btn-quickview', function() {
+                setTimeout(function() {
+                    self.removeButtons('popup').injectButton(retailer, {
+                        injectType: 'popup',
+                        stopPolling: true
+                    });
+                }, timeout);
+            });
+            
+            $('body').on('click', '#QuickViewDialog .product-variations .swatches li', function() {
+                setTimeout(function() {
+                    self.removeButtons('popup').injectButton(retailer, {
+                        injectType: 'popup',
+                        stopPolling: true
+                    });
+                }, timeout);
+            });
+        }
+        ,
+
         shopTiquesCustomHandler: function(retailer) {
             var self = this;
             var timeout = 1000;

@@ -1209,14 +1209,30 @@
     {
       "PSource": "Reitmans",
       "url": "http://www.reitmans.com/en",
+      "customHandler":"reitMansCustomHandler",
+      "retryInterval":3000,
+      "maxRetryAttempts":3,
       "button":{
-        "selector":"#add-to-cart",
-        "insertionNode":".product-accordion:prepend"
+        "selector":"#main #pdpMain #add-to-cart",
+        "insertionNode":"#main #pdpMain .product-accordion:prepend"
       },
       "content":{
         "PThumbnail":"#thumbnails ul li.thumb.selected > a > img || .product-primary-image a.main-image img.primary-image",
         "PName":"h1.product-name",
         "Price":".attribute.color .value .pricePromo || .attribute.color .value .priceMarkdown || .attribute.color .value .priceRegular"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#QuickViewDialog #add-to-cart",
+            "insertionNode":"#QuickViewDialog .product-actions ul.menu:insertbefore"
+          },
+          "content":{
+            "PThumbnail":"#QuickViewDialog .primary-image",
+            "PName":"#QuickViewDialog h1.product-name",
+            "Price":"#QuickViewDialog .product-variations .pricePromo || #QuickViewDialog .product-variations .priceRegular"
+          }
+        }
       }
     },
     {

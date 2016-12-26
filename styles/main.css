@@ -45,6 +45,9 @@
 .blackcart-loading-view.blackcart-retailer-shopbop {
   z-index: 2000;
 }
+.blackcart-loading-view.blackcart-retailer-reitmans {
+  z-index: 1100;
+}
 .blackcart-loading-view.blackcart-retailer-joe-fresh {
   z-index: 1100;
 }
