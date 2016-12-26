@@ -204,11 +204,11 @@
       "retryInterval":2500,
       "maxRetryAttempts":3,
       "button":{
-        "selector":".product-view .add-to-cart",
-        "insertionNode":".product-options-bottom"
+        "selector":".page-wrap .product-view .add-to-cart",
+        "insertionNode":".page-wrap .product-options-bottom"
       },
       "content":{
-        "PThumbnail":"#more-slider > li > a > img",
+        "PThumbnail":".page-wrap .zoomPad:first-child img:nth(1)",
         "PName":".product-name > h1",
         "Price":".product-shop .price-box .special-price .price || .product-shop .price-box .regular-price .price"
       },
@@ -219,7 +219,7 @@
             "insertionNode":"#quick-popup .product-options-bottom"
           },
           "content":{
-            "PThumbnail":"#quick-popup #more-slider > li > a > img",
+            "PThumbnail":"#quick-popup .zoomPad img:nth(1)",
             "PName":"#quick-popup .product-name > h1 > a || #quick-popup .product-name > h1",
             "Price":"#quick-popup .special-price .price || #quick-popup .regular-price .price"
           }
