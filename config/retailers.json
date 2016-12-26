@@ -76,11 +76,11 @@
       "url":"http://www.garageclothing.com/ca",
       "customHandler":"garageCustomHandler",
       "button":{
-        "selector":"#pdpAddToCartButton .btn_addtocart",
-        "insertionNode":"#pdpAddToCartButton:insertafter"
+        "selector":"#prodContent #prodDetailsContainer #pdpAddToCartButton .btn_addtocart",
+        "insertionNode":"#prodContent #prodDetailsContainer #pdpAddToCartButton:insertafter"
       },
       "content":{
-        "PThumbnail":".addViews > li:first-child > a >img",
+        "PThumbnail":"#prodContent #prodDetailsContainer .pdpMainImg",
         "PName":".prodName",
         "Price":".prodPricePDP span.withSale || .prodPricePDP"
       },
@@ -91,7 +91,7 @@
             "insertionNode":"#cboxContent #pdpAddToCartButton:insertafter"
           },
           "content":{
-            "PThumbnail":"#cboxContent .addViews > li:first-child > a >img",
+            "PThumbnail":"#cboxContent #pdpImageDisplayContainer img",
             "PName":"#cboxContent .prodName",
             "Price":"#cboxContent .prodPricePDP span.withSale || #cboxContent .prodPricePDP"
           }
