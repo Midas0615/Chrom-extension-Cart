@@ -1167,15 +1167,29 @@
       "PSource": "Joe Fresh",
       "url": "https://www.joefresh.com/ca/",
       "customHandler":"joeFreshCustomHandler",
+      "retryInterval":1500,
+      "maxRetryAttempts":3,
       "button":{
-        "selector":".add-to-bag > .btn",
-        "insertionNode":".add-to-bag",
-        "cls":"joe-fresh-btn"
+        "selector":"#product-info-content .add-to-bag > .btn",
+        "insertionNode":"#product-info-content .add-to-bag"
       },
       "content":{
         "PThumbnail":"#product-images-display > ul li.product-images-item:first-child > picture > img || img.image-show || img.product-image:nth(1)",
         "PName":".essential-info h1",
         "Price":"#product-info-content .product-price .price-group.-new > span || #product-info-content .product-price .price-group.-normal > span || .product-price .price-group.-new > span || .product-price .price-group.-normal > span"
+      },
+      "alternates":{
+        "popup":{
+          "button":{
+            "selector":"#quickview-modal .add-to-bag > .btn",
+            "insertionNode":"#quickview-modal .add-to-bag"
+          },
+          "content":{
+            "PThumbnail":"#quickview-modal .product-image img",
+            "PName":"#quickview-modal .product-info .essential-info h1",
+            "Price":"#quickview-modal .product-info .essential-info .price-amount.-normal || #quickview-modal .product-info .essential-info .price-amount.-new"
+          }
+        }
       }
     },
     {
