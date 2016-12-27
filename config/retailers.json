@@ -132,12 +132,12 @@
       "retryInterval": 1000,
       "maxRetryAttempts":3,
       "button":{
-        "selector":".exp-pdp-promo-message",
-        "insertionNode":".exp-pdp-promo-wrapper"
+        "selector":".add-to-cart",
+        "insertionNode":".add-to-cart:insertafter"
       },
       "content":{
-        "PThumbnail":".exp-pdp-alt-images-carousel li.exp-pdp-active > img",
-        "PName":".exp-product-title",
+        "PThumbnail":".exp-pdp-alt-images-carousel li.exp-pdp-active > img || .exp-id-imagegrid__items.js-imageGridItems img:nth(1)",
+        "PName":".exp-product-title || .exp-pdp-title__main-title",
         "Price":".exp-pdp-product-price .exp-pdp-local-price"
       }
     },

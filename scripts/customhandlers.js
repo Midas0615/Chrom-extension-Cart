@@ -154,6 +154,7 @@
                     }, timeout);
                 }
             });
+            
         },
         garageCustomHandler: function(retailer) {
             var self = this;
@@ -400,6 +401,7 @@
                 
                 
                 timer = setInterval(function(){
+                    console.log('sdfsdf');
                     if(text != $("div#quickview-modal a.chzn-single span").html()){
                         text = $("div#quickview-modal a.chzn-single span").html();
                         setTimeout(function() {
