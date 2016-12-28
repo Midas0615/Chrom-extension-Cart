@@ -373,45 +373,47 @@
             var timeout = 2500;
             var timer;
             var text = "Size";
-//            $('body').on('change', '#variant,#qty', function() {
-//                setTimeout(function() {
-//                    self.removeButtons().injectButton(retailer, {
-//                        stopPolling: true
-//                    });
-//                }, timeout);
-//            }).on('click', 'li.active-result', function() {
-//                setTimeout(function() {
-//                    self.removeButtons().injectButton(retailer, {
-//                        stopPolling: true
-//                    });
-//                }, timeout);
-//            });
+            $('body').on('change', '#variant,#qty', function() {
+                setTimeout(function() {
+                    self.removeButtons().injectButton(retailer, {
+                        stopPolling: true
+                    });
+                }, timeout);
+            }).on('click', 'li.active-result', function() {
+                setTimeout(function() {
+                    self.removeButtons().injectButton(retailer, {
+                        stopPolling: true
+                    });
+                }, timeout);
+            });
+            
             $('body').on('click', 'button.close.icon-close', function(){
                 clearInterval(timer);
                 text = "Size";
-            })
+            });
+            
             $('button.quickview-button').click(function() {
+                console.log('Quick View Clicked');
                 setTimeout(function() {
                     self.removeButtons('popup').injectButton(retailer, {
                         injectType: 'popup',
                         stopPolling: true
                     });
                     $("#quickview-modal .add-to-bag").find("br").remove();
+                    
+                    timer = setInterval(function(){
+                        console.log('Timer Action');
+                        if(text != $("div#quickview-modal a.chzn-single span").html()){
+                            text = $("div#quickview-modal a.chzn-single span").html();
+                            setTimeout(function() {
+                                self.removeButtons().injectButton(retailer, {
+                                    injectType: 'popup',
+                                    stopPolling: true
+                                });
+                            }, timeout);
+                        }
+                    },1000);
                 }, timeout);
-                
-                
-                timer = setInterval(function(){
-                    console.log('sdfsdf');
-                    if(text != $("div#quickview-modal a.chzn-single span").html()){
-                        text = $("div#quickview-modal a.chzn-single span").html();
-                        setTimeout(function() {
-                            self.removeButtons().injectButton(retailer, {
-                                injectType: 'popup',
-                                stopPolling: true
-                            });
-                        }, timeout);
-                    }
-                },1000);
             });
             
             $('body').on('click','#quickview-modal .color-selector .swatch-link span', function(event){
