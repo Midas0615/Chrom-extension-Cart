@@ -373,6 +373,65 @@
             var timeout = 2500;
             var timer;
             var text = "Size";
+            
+            if($("button.quickview-button").length == 0){
+                setTimeout(function(){
+                    window.location.reload();
+                },timeout)
+            }
+            
+            $('body').on('click', 'button.quickview-button', function(){
+                console.log("Working...");
+            });
+            
+            $('button.quickview-button').click(function(event) {
+                event.stopPropagation();
+                console.log('Quick View Clicked');
+                setTimeout(function() {
+                    self.removeButtons('popup').injectButton(retailer, {
+                        injectType: 'popup',
+                        stopPolling: true
+                    });
+                    $("#quickview-modal .add-to-bag").find("br").remove();
+                    
+                    timer = setInterval(function(){
+                        if(text != $("div#quickview-modal a.chzn-single span").html()){
+                            text = $("div#quickview-modal a.chzn-single span").html();
+                            setTimeout(function() {
+                                self.removeButtons().injectButton(retailer, {
+                                    injectType: 'popup',
+                                    stopPolling: true
+                                });
+                            }, timeout);
+                        }
+                    },1000);
+                }, timeout);
+            });
+            
+            $('body').on('click', function(event) {
+                event.stopPropagation();
+                console.log('Quick View Clicked');
+                setTimeout(function() {
+                    self.removeButtons('popup').injectButton(retailer, {
+                        injectType: 'popup',
+                        stopPolling: true
+                    });
+                    $("#quickview-modal .add-to-bag").find("br").remove();
+                    
+                    timer = setInterval(function(){
+                        if(text != $("div#quickview-modal a.chzn-single span").html()){
+                            text = $("div#quickview-modal a.chzn-single span").html();
+                            setTimeout(function() {
+                                self.removeButtons().injectButton(retailer, {
+                                    injectType: 'popup',
+                                    stopPolling: true
+                                });
+                            }, timeout);
+                        }
+                    },1000);
+                }, timeout);
+            });
+            
             $('body').on('change', '#variant,#qty', function() {
                 setTimeout(function() {
                     self.removeButtons().injectButton(retailer, {
@@ -392,29 +451,6 @@
                 text = "Size";
             });
             
-            $('button.quickview-button').click(function() {
-                console.log('Quick View Clicked');
-                setTimeout(function() {
-                    self.removeButtons('popup').injectButton(retailer, {
-                        injectType: 'popup',
-                        stopPolling: true
-                    });
-                    $("#quickview-modal .add-to-bag").find("br").remove();
-                    
-                    timer = setInterval(function(){
-                        console.log('Timer Action');
-                        if(text != $("div#quickview-modal a.chzn-single span").html()){
-                            text = $("div#quickview-modal a.chzn-single span").html();
-                            setTimeout(function() {
-                                self.removeButtons().injectButton(retailer, {
-                                    injectType: 'popup',
-                                    stopPolling: true
-                                });
-                            }, timeout);
-                        }
-                    },1000);
-                }, timeout);
-            });
             
             $('body').on('click','#quickview-modal .color-selector .swatch-link span', function(event){
                 event.stopPropagation();

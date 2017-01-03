@@ -1167,8 +1167,8 @@
       "PSource": "Joe Fresh",
       "url": "https://www.joefresh.com/ca/",
       "customHandler":"joeFreshCustomHandler",
-      "retryInterval":1500,
-      "maxRetryAttempts":3,
+      "retryInterval":1000,
+      "maxRetryAttempts":15,
       "button":{
         "selector":"#product-info-content .add-to-bag > .btn",
         "insertionNode":"#product-info-content .add-to-bag"
